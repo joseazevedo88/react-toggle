@@ -1,5 +1,6 @@
-import React, { Component } from "react";
-import styled from "styled-components";
+import React, { useState } from "react";
+import styled, { ThemeProvider } from "styled-components";
+//import theme from './theme'
 
 const Input = styled.input`
   height: 20rem;
@@ -7,9 +8,38 @@ const Input = styled.input`
   border-radius: 10rem;
   appearance: none;
   background: lightsalmon;
+  position: relative;
+  margin: 0;
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
+
+  &::before {
+    content: "";
+    height: 20rem;
+    width: 20rem;
+    background: white;
+    position: absolute;
+    border-radius: 50%;
+  }
+
+  &:checked {
+    &::before {
+      content: "";
+      height: 20rem;
+      width: 20rem;
+      background: white;
+      position: absolute;
+      right: 0;
+      transition: right 500ms linear;
+      border-radius: 50%;
+    }
+  }
 `;
 
-const Wrapper = styled.div`
+const Body = styled.div`
   height: 100vh;
   background: lightblue;
   display: flex;
@@ -17,11 +47,36 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 
+const InputWrapper = styled.div`
+  position: relative;
+`;
+
+const Label = styled.p`
+  font-family: "Oswald";
+  font-size: 10rem;
+  margin-left: 4rem;
+  color: white;
+`;
+
 function App() {
+  const [checked, setChecked] = useState(false);
+
   return (
-    <Wrapper>
-      <Input type="checkbox" />
-    </Wrapper>
+    // <ThemeProvider theme={theme}>
+    <Body>
+      <InputWrapper>
+        <Input
+          type="checkbox"
+          onClick={() => {
+            console.log("welelel");
+          }}
+        />
+        {/* {checked && <Checked />}
+        {!checked && <Unchecked />} */}
+      </InputWrapper>
+      <Label>Checked</Label>
+    </Body>
+    // </ThemeProvider>
   );
 }
 
