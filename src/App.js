@@ -59,7 +59,7 @@ const Label = styled.p`
 `;
 
 function App() {
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState("Unchecked");
 
   return (
     // <ThemeProvider theme={theme}>
@@ -68,13 +68,14 @@ function App() {
         <Input
           type="checkbox"
           onClick={() => {
-            console.log("welelel");
+            if (checked === "Checked") setChecked("Unchecked");
+            else setChecked("Checked");
           }}
         />
         {/* {checked && <Checked />}
         {!checked && <Unchecked />} */}
       </InputWrapper>
-      <Label>Checked</Label>
+      <Label>{checked}</Label>
     </Body>
     // </ThemeProvider>
   );
