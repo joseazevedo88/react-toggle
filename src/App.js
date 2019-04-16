@@ -1,44 +1,8 @@
 import React, { useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
-//import theme from './theme'
-
-const Input = styled.input`
-  height: 20rem;
-  width: 40rem;
-  border-radius: 10rem;
-  appearance: none;
-  background: lightsalmon;
-  position: relative;
-  margin: 0;
-
-  &:focus {
-    border: none;
-    outline: none;
-  }
-
-  &::before {
-    content: "";
-    height: 20rem;
-    width: 20rem;
-    background: white;
-    position: absolute;
-    border-radius: 50%;
-  }
-
-  &:checked {
-    &::before {
-      content: "";
-      height: 20rem;
-      width: 20rem;
-      background: lightgrey;
-      position: absolute;
-      //right: 0;
-      transform: translate(20rem);
-      transition: all 200ms linear;
-      border-radius: 50%;
-    }
-  }
-`;
+import { theme } from "./theme";
+import { Input } from "./Input";
+// import { Ball } from "./ball";
 
 const Body = styled.div`
   height: 100vh;
@@ -48,37 +12,49 @@ const Body = styled.div`
   align-items: center;
 `;
 
-const InputWrapper = styled.div`
+const CheckboxWrapper = styled.div`
   position: relative;
 `;
 
-const Label = styled.p`
-  font-family: "Oswald";
-  font-size: 10rem;
-  margin-left: 4rem;
-  color: white;
-`;
-
 function App() {
-  const [checked, setChecked] = useState("Unchecked");
-
   return (
-    // <ThemeProvider theme={theme}>
-    <Body>
-      <InputWrapper>
-        <Input
-          type="checkbox"
-          onClick={() => {
-            if (checked === "Checked") setChecked("Unchecked");
-            else setChecked("Checked");
-          }}
-        />
-        {/* {checked && <Checked />}
-        {!checked && <Unchecked />} */}
-      </InputWrapper>
-      <Label>{checked}</Label>
-    </Body>
-    // </ThemeProvider>
+    <ThemeProvider theme={theme}>
+      <Body>
+        <CheckboxWrapper>
+          <Input
+            type="checkbox"
+            bg={theme.colors.salmon}
+            height={theme.sizes.sm}
+            width={theme.sizes.md}
+            right="right-10"
+            m={theme.sizes.sm}
+            ballbg={theme.colors.light}
+          />
+        </CheckboxWrapper>
+        <CheckboxWrapper>
+          <Input
+            type="checkbox"
+            bg={theme.colors.coral}
+            height={theme.sizes.sm}
+            width={theme.sizes.lg}
+            right="right-15"
+            m={theme.sizes.sm}
+            ballbg={theme.colors.light}
+          />
+        </CheckboxWrapper>
+        <CheckboxWrapper>
+          <Input
+            type="checkbox"
+            bg={theme.colors.seagreen}
+            height={theme.sizes.md}
+            width={theme.sizes.xlg}
+            right="right-10"
+            m={theme.sizes.sm}
+            ballbg={theme.colors.light}
+          />
+        </CheckboxWrapper>
+      </Body>
+    </ThemeProvider>
   );
 }
 
