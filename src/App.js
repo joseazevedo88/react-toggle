@@ -30,10 +30,11 @@ const Input = styled.input`
       content: "";
       height: 20rem;
       width: 20rem;
-      background: white;
+      background: lightgrey;
       position: absolute;
-      right: 0;
-      transition: right 500ms linear;
+      //right: 0;
+      transform: translate(20rem);
+      transition: all 200ms linear;
       border-radius: 50%;
     }
   }
