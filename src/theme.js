@@ -3,6 +3,7 @@ export const theme = {
     salmon: "lightsalmon",
     seagreen: "lightseagreen",
     coral: "lightcoral",
+    yellow: "lightgoldenrodyellow",
     dark: "black",
     light: "white"
   },

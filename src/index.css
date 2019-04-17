@@ -20,7 +20,7 @@ code {
 }
 
 .right-15 {
-  background: lightsteelblue !important;
+  background: lightgreen !important;
   transform: translate(15rem) !important;
   transition: all 200ms linear !important;
 }

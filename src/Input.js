@@ -83,14 +83,20 @@ const Label = styled.p`
 `;
 
 export function Input(props) {
-  const [checked, setChecked] = useState("!Checked");
+  const [checked, setChecked] = useState("Unchecked");
   const [left, setLeft] = useState(true);
 
   const onClick = () => {
-    if (checked === "Checked!") setChecked("!Checked");
-    else setChecked("Checked!");
+    if (checked === "Checked") setChecked("Unchecked");
+    else setChecked("Checked");
     setLeft(!left);
   };
+
+  // const right10 = {
+  //   background: "lightsteelblue !important",
+  //   transform: "translate(10rem) !important",
+  //   transition: "all 200ms linear !important"
+  // };
 
   return (
     <div>
@@ -109,6 +115,7 @@ export function Input(props) {
         m={props.m}
         bg={props.ballbg}
         onClick={onClick}
+        // style={left ? {} : right10}
       />
       <Label>{checked}</Label>
     </div>

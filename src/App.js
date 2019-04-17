@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from "./theme";
 import { Input } from "./Input";
@@ -39,7 +39,7 @@ function App() {
             width={theme.sizes.lg}
             right="right-15"
             m={theme.sizes.sm}
-            ballbg={theme.colors.light}
+            ballbg={theme.colors.seagreen}
           />
         </CheckboxWrapper>
         <CheckboxWrapper>
@@ -50,7 +50,7 @@ function App() {
             width={theme.sizes.xlg}
             right="right-10"
             m={theme.sizes.sm}
-            ballbg={theme.colors.light}
+            ballbg={theme.colors.yellow}
           />
         </CheckboxWrapper>
       </Body>
