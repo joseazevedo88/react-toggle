@@ -26,9 +26,10 @@ function App() {
             bg={theme.colors.salmon}
             height={theme.sizes.sm}
             width={theme.sizes.md}
-            right="right-10"
             m={theme.sizes.sm}
             ballbg={theme.colors.light}
+            ballbgAfter={theme.colors.yellow}
+            label="Cool"
           />
         </CheckboxWrapper>
         <CheckboxWrapper>
@@ -37,9 +38,10 @@ function App() {
             bg={theme.colors.coral}
             height={theme.sizes.sm}
             width={theme.sizes.lg}
-            right="right-15"
             m={theme.sizes.sm}
             ballbg={theme.colors.seagreen}
+            ballbgAfter={theme.colors.salmon}
+            label="Checked"
           />
         </CheckboxWrapper>
         <CheckboxWrapper>
@@ -48,9 +50,10 @@ function App() {
             bg={theme.colors.seagreen}
             height={theme.sizes.md}
             width={theme.sizes.xlg}
-            right="right-10"
             m={theme.sizes.sm}
             ballbg={theme.colors.yellow}
+            ballbgAfter={theme.colors.light}
+            label="blabal"
           />
         </CheckboxWrapper>
       </Body>
