@@ -22,6 +22,7 @@ function App() {
       <Body>
         <CheckboxWrapper>
           <Input
+            render={checked => (!checked ? "Unchecked" : "Checked")}
             type="checkbox"
             bg={theme.colors.salmon}
             height={theme.sizes.sm}
@@ -34,6 +35,7 @@ function App() {
         </CheckboxWrapper>
         <CheckboxWrapper>
           <Input
+            render={checked => (!checked ? "Beep" : "Boop")}
             type="checkbox"
             bg={theme.colors.coral}
             height={theme.sizes.sm}
@@ -46,6 +48,7 @@ function App() {
         </CheckboxWrapper>
         <CheckboxWrapper>
           <Input
+            render={checked => (!checked ? "Unchecked" : "Checked")}
             type="checkbox"
             bg={theme.colors.seagreen}
             height={theme.sizes.md}

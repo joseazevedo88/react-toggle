@@ -58,7 +58,7 @@ const Ball = styled.div`
   ${fontFamily};
 `;
 
-const LabelStyle = styled.p`
+const Label = styled.p`
   font-family: "Oswald";
   font-size: 5rem;
   text-align: center;
@@ -72,6 +72,8 @@ export function Input(props) {
     setChecked(!checked);
   };
 
+  console.log(props);
+
   return (
     <div style={{ position: "relative" }}>
       <InputStyle
@@ -83,10 +85,8 @@ export function Input(props) {
         onClick={onClick}
       />
       <Ball
-        className={!checked ? "" : props.right}
         height={props.height}
         parentWidth={props.width}
-        calc={css`calc(parentWidth - height)`}
         width={props.height}
         m={props.m}
         background={props.ballbg}
@@ -94,14 +94,7 @@ export function Input(props) {
         onClick={onClick}
         checked={checked}
       />
-      {/* <Label>{checked ? "Checked" : "Unchecked"}</Label> */}
-      <Label label={props.label} />
+      <Label>{props.render ? props.render(checked) : ""}</Label>
     </div>
   );
-}
-
-export function Label(props) {
-  const [text, setText] = useState(props.label);
-
-  return <LabelStyle>{text}</LabelStyle>;
 }
