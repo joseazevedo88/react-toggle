@@ -26,6 +26,11 @@ const InputStyle = styled.input`
     outline: none;
   }
 
+  &:focus ~ .label, &:hover ~ .label {
+    color: lightpink;
+  }
+  
+
   ${display}
   ${space}
   ${width}
@@ -47,7 +52,16 @@ const Ball = styled.div`
   transform: translate(0);
   transition: all 200ms linear;
   background: ${props => (props.checked ? props.bgAfter : props.background)};
-  
+
+  &:indeterminate ~ .label {
+    background-color: #ddd;
+  }
+
+  &:focus ~ .label, &:hover ~ .label {
+    color: lightpink;
+  }
+
+
   ${display}
   ${space} 
   ${width} 
@@ -94,7 +108,9 @@ export function Input(props) {
         onClick={onClick}
         checked={checked}
       />
-      <Label>{props.render ? props.render(checked) : ""}</Label>
+      <Label className="label">
+        {props.render ? props.render(checked) : ""}
+      </Label>
     </div>
   );
 }
